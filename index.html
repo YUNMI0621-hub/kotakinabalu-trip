@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <title>🌴 코타키나발루 가족 여행 일정 🌴</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <style>
     body {
       margin: 0;
@@ -16,49 +15,82 @@
     header {
       background: url("https://images.unsplash.com/photo-1541417904950-b855846fe074") center/cover no-repeat;
       color: white;
-      padding: 80px 20px;
+      padding: 60px 20px;
       text-align: center;
     }
 
     header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
+      font-size: 2rem;
+      margin-bottom: 8px;
     }
 
     header p {
-      font-size: 1.1rem;
+      font-size: 1rem;
       background: rgba(0,0,0,0.4);
       display: inline-block;
-      padding: 8px 16px;
+      padding: 6px 12px;
       border-radius: 20px;
     }
 
     section {
-      padding: 40px 20px;
+      padding: 20px 15px;
       max-width: 1000px;
       margin: auto;
     }
 
     h2 {
-      margin-bottom: 20px;
+      margin-bottom: 15px;
       color: #00796b;
+      font-size: 1.3rem;
+    }
+
+    /* 탭 스타일 */
+    .tabs {
+      display: flex;
+      overflow-x: auto;
+      border-bottom: 2px solid #4db6ac;
+      margin-bottom: 20px;
+    }
+
+    .tabs button {
+      flex: 1 0 auto;
+      padding: 10px 0;
+      border: none;
+      background: #b2dfdb;
+      color: #004d40;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+      min-width: 80px;
+    }
+
+    .tabs button.active {
+      background: #004d40;
+      color: white;
     }
 
     .day {
-      margin-bottom: 30px;
+      display: none;
+      margin-bottom: 20px;
+    }
+
+    .day.active {
+      display: block;
     }
 
     .day h3 {
       background: #4db6ac;
       color: white;
-      padding: 10px 16px;
+      padding: 8px 12px;
       border-radius: 12px;
       display: inline-block;
+      font-size: 1.1rem;
     }
 
     ul {
       padding-left: 20px;
-      line-height: 1.8;
+      line-height: 1.7;
+      margin-top: 10px;
     }
 
     /* 🔽 접기/펼치기 관련 */
@@ -66,6 +98,7 @@
       cursor: pointer;
       position: relative;
       padding-right: 20px;
+      margin: 5px 0;
     }
 
     .toggle-item::after {
@@ -83,26 +116,47 @@
     .detail {
       max-height: 0;
       overflow: hidden;
-      transition: max-height 0.4s ease;
+      transition: max-height 0.4s ease, padding 0.3s ease;
       background: #f9f9f9;
       border-left: 4px solid #4db6ac;
-      padding: 0 12px;
-      margin: 8px 0 12px 0;
+      padding: 0 10px;
+      margin: 6px 0 10px 0;
       border-radius: 8px;
       font-size: 0.95rem;
     }
 
     .detail.open {
-      padding: 12px;
-      max-height: 500px;
+      padding: 10px;
+      max-height: 600px;
     }
 
     footer {
       text-align: center;
-      padding: 30px;
+      padding: 25px 15px;
       background: #004d40;
       color: white;
-      margin-top: 40px;
+      margin-top: 30px;
+      font-size: 0.95rem;
+    }
+
+    /* 모바일 최적화 */
+    @media (max-width: 600px) {
+      header {
+        padding: 40px 15px;
+      }
+      header h1 {
+        font-size: 1.6rem;
+      }
+      header p {
+        font-size: 0.9rem;
+        padding: 4px 10px;
+      }
+      .tabs button {
+        font-size: 0.85rem;
+      }
+      .day h3 {
+        font-size: 1rem;
+      }
     }
   </style>
 </head>
@@ -115,166 +169,143 @@
 </header>
 
 <section>
-  <h2>🗓️ 상세 일정</h2>
+  <h2>🗓️ 날짜별 일정</h2>
+
+  <!-- 탭 버튼 -->
+  <div class="tabs">
+    <button class="tab-button active" data-day="day1">DAY 1</button>
+    <button class="tab-button" data-day="day2">DAY 2</button>
+    <button class="tab-button" data-day="day3">DAY 3</button>
+    <button class="tab-button" data-day="day4">DAY 4</button>
+    <button class="tab-button" data-day="day5">DAY 5</button>
+  </div>
 
   <!-- DAY 1 -->
-  <div class="day">
+  <div class="day active" id="day1">
     <h3>DAY 1 – 출국 & 도착</h3>
     <ul>
-      <li>
-        <div class="toggle-item">15:30~16:30 🏠 집 - 김해 공항 도착</div>
-        <div class="detail">
-          집에서 출발, 김해 공항 이동
-        </div>
+      <li><div class="toggle-item">15:30~16:30 🏠 집 - 김해 공항 도착</div>
+        <div class="detail">집에서 출발, 김해 공항 이동</div>
       </li>
-      <li>
-        <div class="toggle-item">16:30~17:00 🅿️ 주차</div>
+      <li><div class="toggle-item">16:30~17:00 🅿️ 주차</div>
         <div class="detail">공항 주차 완료</div>
       </li>
-      <li>
-        <div class="toggle-item">17:00~17:30 🧳 짐 부치기</div>
+      <li><div class="toggle-item">17:00~17:30 🧳 짐 부치기</div>
         <div class="detail">짐 무게 체크 및 부치기</div>
       </li>
-      <li>
-        <div class="toggle-item">17:30~18:00 🍽 식사</div>
+      <li><div class="toggle-item">17:30~18:00 🍽 식사</div>
         <div class="detail">공항 내 식사 또는 간단 간식</div>
       </li>
-      <li>
-        <div class="toggle-item">18:00~18:30 🛂 입국 심사</div>
+      <li><div class="toggle-item">18:00~18:30 🛂 입국 심사</div>
         <div class="detail">출국 심사 및 보안검색</div>
       </li>
-      <li>
-        <div class="toggle-item">18:30~19:30 ✈️ 비행기 탑승</div>
+      <li><div class="toggle-item">18:30~19:30 ✈️ 비행기 탑승</div>
         <div class="detail">탑승수속 및 착석</div>
       </li>
-      <li>
-        <div class="toggle-item">19:30~23:40 🛬 코타키나발루 공항 도착</div>
+      <li><div class="toggle-item">19:30~23:40 🛬 코타키나발루 공항 도착</div>
         <div class="detail">공항 도착 후 출국 심사 준비</div>
       </li>
-      <li>
-        <div class="toggle-item">23:40~24:00 🛃 출국 심사</div>
+      <li><div class="toggle-item">23:40~24:00 🛃 출국 심사</div>
         <div class="detail">현지 출국 심사</div>
       </li>
-      <li>
-        <div class="toggle-item">24:00~24:30 💳 캐리어 찾기, 현금 인출, 📱 유심 연결</div>
+      <li><div class="toggle-item">24:00~24:30 💳 캐리어 찾기, 현금 인출, 📱 유심 연결</div>
         <div class="detail">
           - ATM 위치: 왼쪽으로 직진, Alliance Bank 사용 (800링깃 인출)<br>
           - 유심: 사전 등록 필수, 나/혁이 즉시 연결, 부모님은 숙소에서 연결
         </div>
       </li>
-      <li>
-        <div class="toggle-item">24:30~25:00 🚕 숙소 이동(그랩 이용), 🏨 제셀톤 퀘이 체크인</div>
+      <li><div class="toggle-item">24:30~25:00 🚕 숙소 이동(그랩 이용), 🏨 제셀톤 퀘이 체크인</div>
         <div class="detail">
           - 6인승 차량 호출 필요<br>
           - KKIA Arrival Pillar 5 출발<br>
           - 체크인 방법: 32층 우편함 열쇠 수령
         </div>
       </li>
-      <li>
-        <div class="toggle-item">25:00~ 😴 짐 풀고 휴식</div>
+      <li><div class="toggle-item">25:00~ 😴 짐 풀고 휴식</div>
         <div class="detail">숙소에서 휴식</div>
       </li>
     </ul>
   </div>
 
   <!-- DAY 2 -->
-  <div class="day">
+  <div class="day" id="day2">
     <h3>DAY 2 – 바다 & 액티비티</h3>
     <ul>
-      <li>
-        <div class="toggle-item">08:20~08:30 🧳 마젤란 짐 보관</div>
+      <li><div class="toggle-item">08:20~08:30 🧳 마젤란 짐 보관</div>
         <div class="detail">짐을 마젤란 리조트에 임시 보관</div>
       </li>
-      <li>
-        <div class="toggle-item">09:00~13:30 🎣 낚시투어</div>
+      <li><div class="toggle-item">09:00~13:30 🎣 낚시투어</div>
         <div class="detail">
           - 마이리얼트립 예약<br>
           - 정확한 픽업 시간은 투어 1일 전 카톡 안내
         </div>
       </li>
-      <li>
-        <div class="toggle-item">13:30~15:00 🏨 체크인, 🏊 수영장 이용</div>
+      <li><div class="toggle-item">13:30~15:00 🏨 체크인, 🏊 수영장 이용</div>
         <div class="detail">마젤란 리조트 체크인 후 수영</div>
       </li>
-      <li>
-        <div class="toggle-item">16:00~17:00 💆 발 마사지</div>
+      <li><div class="toggle-item">16:00~17:00 💆 발 마사지</div>
         <div class="detail">리조트 내 마사지</div>
       </li>
-      <li>
-        <div class="toggle-item">18:00~19:00 🌅 일몰</div>
+      <li><div class="toggle-item">18:00~19:00 🌅 일몰</div>
         <div class="detail">최소 20분 전 도착, 탄중아루 또는 리조트 근처</div>
       </li>
-      <li>
-        <div class="toggle-item">19:00~20:00 🍤 쌍천씨푸드</div>
+      <li><div class="toggle-item">19:00~20:00 🍤 쌍천씨푸드</div>
         <div class="detail">현지 씨푸드 레스토랑</div>
       </li>
-      <li>
-        <div class="toggle-item">20:00~21:00 🌃 필리피노 야시장</div>
+      <li><div class="toggle-item">20:00~21:00 🌃 필리피노 야시장</div>
         <div class="detail">현지 야시장 구경, 간식 포함</div>
       </li>
     </ul>
   </div>
 
   <!-- DAY 3 -->
-  <div class="day">
+  <div class="day" id="day3">
     <h3>DAY 3 – 자유 일정 & 쇼핑</h3>
     <ul>
-      <li>
-        <div class="toggle-item">08:00~08:30 🥐 조식 및 준비</div>
+      <li><div class="toggle-item">08:00~08:30 🥐 조식 및 준비</div>
         <div class="detail">조식 후 액티비티 준비</div>
       </li>
-      <li>
-        <div class="toggle-item">08:30~13:00 🤿 액티비티</div>
+      <li><div class="toggle-item">08:30~13:00 🤿 액티비티</div>
         <div class="detail">현지 액티비티 참여, 미끼용 빵 챙기기</div>
       </li>
-      <li>
-        <div class="toggle-item">13:00~16:00 🍔 졸리비 배달 & 🏊 수영장 & 🚿 씻고 준비</div>
+      <li><div class="toggle-item">13:00~16:00 🍔 졸리비 배달 & 🏊 수영장 & 🚿 씻고 준비</div>
         <div class="detail">
           - 미리 장바구니 담기<br>
           - 리조트 이동 시 기사에게 픽업 요청
         </div>
       </li>
-      <li>
-        <div class="toggle-item">16:00~17:30 💆 마사지</div>
+      <li><div class="toggle-item">16:00~17:30 💆 마사지</div>
         <div class="detail">리조트 내 마사지</div>
       </li>
-      <li>
-        <div class="toggle-item">17:30~19:00 🌅 탄중아루</div>
+      <li><div class="toggle-item">17:30~19:00 🌅 탄중아루</div>
         <div class="detail">석양 감상, 사진 촬영</div>
       </li>
-      <li>
-        <div class="toggle-item">19:00~21:00 🛍 KK플라자 or 수리아사바 몰</div>
+      <li><div class="toggle-item">19:00~21:00 🛍 KK플라자 or 수리아사바 몰</div>
         <div class="detail">쇼핑 및 기념품 구매</div>
       </li>
-      <li>
-        <div class="toggle-item">21:00~ 🍜 한식 배달</div>
+      <li><div class="toggle-item">21:00~ 🍜 한식 배달</div>
         <div class="detail">제주식당 또는 우리 BBQ 배달</div>
       </li>
     </ul>
   </div>
 
   <!-- DAY 4 -->
-  <div class="day">
+  <div class="day" id="day4">
     <h3>DAY 4 – 시티투어 & 반딧불이</h3>
     <ul>
-      <li>
-        <div class="toggle-item">08:00~09:00 🥐 조식</div>
+      <li><div class="toggle-item">08:00~09:00 🥐 조식</div>
         <div class="detail">조식 후 준비</div>
       </li>
-      <li>
-        <div class="toggle-item">09:30~10:00 🏨 마젤란 체크아웃</div>
+      <li><div class="toggle-item">09:30~10:00 🏨 마젤란 체크아웃</div>
         <div class="detail">리조트 체크아웃 후 시티투어 준비</div>
       </li>
-      <li>
-        <div class="toggle-item">10:00~12:00 🚌 시티투어</div>
+      <li><div class="toggle-item">10:00~12:00 🚌 시티투어</div>
         <div class="detail">현지 관광지 투어</div>
       </li>
-      <li>
-        <div class="toggle-item">12:00~13:00 🛍 수리아사바 몰</div>
+      <li><div class="toggle-item">12:00~13:00 🛍 수리아사바 몰</div>
         <div class="detail">쇼핑 및 점심 가능</div>
       </li>
-      <li>
-        <div class="toggle-item">13:00~13:50 🍜 유잇청</div>
+      <li><div class="toggle-item">13:00~13:50 🍜 유잇청</div>
         <div class="detail">
           1) 토스트: 07~15시<br>
           2) 국수 및 식사: 08~14시<br>
@@ -282,39 +313,32 @@
           ※ KK플라자랑 수리아사바 몰 사이
         </div>
       </li>
-      <li>
-        <div class="toggle-item">14:15~21:00 ✨ 반딧불이 투어</div>
+      <li><div class="toggle-item">14:15~21:00 ✨ 반딧불이 투어</div>
         <div class="detail">마젤란 업체 픽업, 자연 속에서 반딧불이 관람</div>
       </li>
-      <li>
-        <div class="toggle-item">21:00~22:00 🍽 저녁???</div>
+      <li><div class="toggle-item">21:00~22:00 🍽 저녁???</div>
         <div class="detail">현지 식사 옵션</div>
       </li>
-      <li>
-        <div class="toggle-item">22:00~22:20 🚕 공항 이동</div>
+      <li><div class="toggle-item">22:00~22:20 🚕 공항 이동</div>
         <div class="detail">공항으로 이동</div>
       </li>
     </ul>
   </div>
 
   <!-- DAY 5 -->
-  <div class="day">
+  <div class="day" id="day5">
     <h3>DAY 5 – 귀국</h3>
     <ul>
-      <li>
-        <div class="toggle-item">00:40~06:30 ✈️ 코타키나발루 → 김해공항</div>
+      <li><div class="toggle-item">00:40~06:30 ✈️ 코타키나발루 → 김해공항</div>
         <div class="detail">비행기 탑승 및 이동</div>
       </li>
-      <li>
-        <div class="toggle-item">06:30~07:00 🛂 출국 심사</div>
+      <li><div class="toggle-item">06:30~07:00 🛂 출국 심사</div>
         <div class="detail">공항 도착 후 출국 심사</div>
       </li>
-      <li>
-        <div class="toggle-item">07:00~07:30 💳 캐리어 찾기</div>
+      <li><div class="toggle-item">07:00~07:30 💳 캐리어 찾기</div>
         <div class="detail">짐 찾고 준비</div>
       </li>
-      <li>
-        <div class="toggle-item">07:30~08:30 🏠 김해공항 → 집</div>
+      <li><div class="toggle-item">07:30~08:30 🏠 김해공항 → 집</div>
         <div class="detail">집으로 안전하게 귀가</div>
       </li>
     </ul>
@@ -327,6 +351,20 @@
 </footer>
 
 <script>
+  // 탭 클릭
+  const tabButtons = document.querySelectorAll('.tab-button');
+  const days = document.querySelectorAll('.day');
+  tabButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      tabButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const dayId = btn.dataset.day;
+      days.forEach(d => d.classList.remove('active'));
+      document.getElementById(dayId).classList.add('active');
+    });
+  });
+
+  // 상세 일정 접기/펼치기
   document.querySelectorAll('.toggle-item').forEach(item => {
     item.addEventListener('click', () => {
       item.classList.toggle('open');
@@ -338,4 +376,3 @@
 
 </body>
 </html>
-
