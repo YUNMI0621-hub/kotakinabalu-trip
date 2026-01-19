@@ -93,6 +93,13 @@
       margin-top: 10px;
     }
 
+    .item {
+      cursor: pointer;
+      position: relative;
+      padding-right: 20px;
+      margin: 15px 0;
+    }
+
     /* 🔽 접기/펼치기 관련 */
     .toggle-item {
       cursor: pointer;
@@ -158,6 +165,16 @@
         font-size: 1rem;
       }
     }
+    .act-section { 
+      display: none; 
+    }
+    .act-section.active { 
+      display: block; 
+    }
+    .act-tab.active {
+      background:#004d40;
+      color:#004d40;
+    }
   </style>
 </head>
 
@@ -178,47 +195,72 @@
     <button class="tab-button" data-day="day3">DAY 3</button>
     <button class="tab-button" data-day="day4">DAY 4</button>
     <button class="tab-button" data-day="day5">DAY 5</button>
+    <button class="tab-button" data-day="DETAIL">DETAIL</button>
   </div>
 
   <!-- DAY 1 -->
   <div class="day active" id="day1">
-    <h3>DAY 1 – 출국 & 도착</h3>
+    <h3>DAY 1 – 01/21</h3>
     <ul>
-      <li><div class="toggle-item">15:30~16:30 🏠 집 - 김해 공항 도착</div>
-        <div class="detail">집에서 출발, 김해 공항 이동</div>
+      <li><div class="item">15:30~16:30 🏠 집 - 김해 공항 도착</div>
       </li>
-      <li><div class="toggle-item">16:30~17:00 🅿️ 주차</div>
-        <div class="detail">공항 주차 완료</div>
+      <li><div class="item">16:30~17:00 🅿️ 주차</div>
       </li>
       <li><div class="toggle-item">17:00~17:30 🧳 짐 부치기</div>
-        <div class="detail">짐 무게 체크 및 부치기</div>
+        <div class="detail">
+          [ 예약번호 ]<br>
+          나/엄마: 3038315 / KJQ7NI<br>
+          혁/아빠: 3038316 / KFHPWH
+        </div>
       </li>
-      <li><div class="toggle-item">17:30~18:00 🍽 식사</div>
-        <div class="detail">공항 내 식사 또는 간단 간식</div>
+      <li><div class="item">17:30~18:00 🍽 식사</div>
       </li>
-      <li><div class="toggle-item">18:00~18:30 🛂 입국 심사</div>
-        <div class="detail">출국 심사 및 보안검색</div>
+      <li><div class="item">18:00~18:30 🛂 출국 심사</div>
       </li>
-      <li><div class="toggle-item">18:30~19:30 ✈️ 비행기 탑승</div>
-        <div class="detail">탑승수속 및 착석</div>
+      <li><div class="item">18:30~19:30 ✈️ 비행기 탑승</div>
       </li>
-      <li><div class="toggle-item">19:30~23:40 🛬 코타키나발루 공항 도착</div>
-        <div class="detail">공항 도착 후 출국 심사 준비</div>
+      <li><div class="toggle-item">19:30~23:40 🛬 코타키나발루 공항 도착 & 📱 유심 연결</div>
+        <div class="detail">
+          나/혁이 도착 즉시 연결<br>
+          엄빠는 숙소에서 연결
+        </div>
       </li>
-      <li><div class="toggle-item">23:40~24:00 🛃 출국 심사</div>
-        <div class="detail">현지 출국 심사</div>
+      <li><div class="item">23:40~24:00 🛃 입국 심사</div>
       </li>
       <li><div class="toggle-item">24:00~24:30 💳 캐리어 찾기, 현금 인출, 📱 유심 연결</div>
         <div class="detail">
-          - ATM 위치: 왼쪽으로 직진, Alliance Bank 사용 (800링깃 인출)<br>
-          - 유심: 사전 등록 필수, 나/혁이 즉시 연결, 부모님은 숙소에서 연결
+          [ 현금 인출 ]<br>
+          1) ATM 기계 위치: 짐 찾고 왼쪽으로 쭉 직진<br>
+          2) 3대 중 가장 좌측 ALLIANCE BANK 사용<br><br>
+          ※ 방법: 언어 영어로 선택 - 비밀번호 입력(4자리 혹은 6자리, 6자리 요구 시 앞이나 뒤에 00 붙이기) - Cashwithdrawal 선택 - (수수료 발생 문구 표시되도 트래블 윌렛은 무료) - Proceed - 원하는 링깃 선택<br>
+          ※ CIMB BANK(빨간 ATM 기계) 이용 시 카드 먹힘 현상 발생 가능성 있음<br>
+          ※ 900링깃 인출! 모자라면, 추가 인출<br>
         </div>
       </li>
-      <li><div class="toggle-item">24:30~25:00 🚕 숙소 이동(그랩 이용), 🏨 제셀톤 퀘이 체크인</div>
+      <li><div class="toggle-item">24:30~25:00 🚕 숙소 이동(그랩 이용)</div>
         <div class="detail">
-          - 6인승 차량 호출 필요<br>
-          - KKIA Arrival Pillar 5 출발<br>
-          - 체크인 방법: 32층 우편함 열쇠 수령
+          그랩 탑승<br>
+          1) 왼쪽으로 쭉 걷기<br>
+          2) 노란색 간판에 숫자 5 찾기<br>
+          3) 그랩 설정<br>
+          - 출발지: KKIA Arrival Pillar 5(자동 설정)<br>
+          - 도착지: 제셀톤 퀘이 타워1<br>
+          ※ 6인승 차량 호출 필요<br>
+          ※ 공식 그랩 탑승 장소: KKIA Arrival Pillar 5<br>
+        </div>
+      </li>
+            <li><div class="toggle-item">25:00~25:10 🏨 제셀톤 퀘이 체크인</div>
+        <div class="detail">
+          [ 체크인 방법 ]<br>
+          1) 32층 도착 후 Mail Box Area라고 적힌 화살표 따라가기(Feat. 공사중인 풍경) & 이 곳에 Gym 있음<br>
+          2) 우편함 도착 후 미리 호스트에게 안내받은 우편함 찾기<br>
+          3) 각 우편함에는 작은 번호형 자물쇠 있음<br>
+          4) 안내받은 번호 입력<br>
+          5) 유닛 열쇠&카드 수령(엘베 타려면 카드 필수)<br><br>
+
+          ※ 방 번호는 당일 저녁 8시 30분에 Whats App으로 전달<br>
+          ※ 편의점 물 등 필요한 것 구매<br>
+          ※ 3층에 있는 사무실에 캐리어 맡기기 가능(~오후 3시) OR 바로 옆 짐 보관소<br>
         </div>
       </li>
       <li><div class="toggle-item">25:00~ 😴 짐 풀고 휴식</div>
@@ -229,83 +271,183 @@
 
   <!-- DAY 2 -->
   <div class="day" id="day2">
-    <h3>DAY 2 – 바다 & 액티비티</h3>
+    <h3>DAY 2 – 01/22</h3>
     <ul>
-      <li><div class="toggle-item">08:20~08:30 🧳 마젤란 짐 보관</div>
-        <div class="detail">짐을 마젤란 리조트에 임시 보관</div>
+      <li><div class="item">~08:00 제셀톤 퀘이 숙소 체크아웃</div>
       </li>
-      <li><div class="toggle-item">09:00~13:30 🎣 낚시투어</div>
+      <li><div class="item">08:00~08:20 제셀톤 퀘이 - 마젤란 숙소 이동</div>
+      </li>
+      <li><div class="item">08:20~08:30 🧳 마젤란 짐 보관</div>
+      </li>
+      <li><div class="toggle-item">08:30~09:00 픽업 & 선착장 이동</div>
         <div class="detail">
-          - 마이리얼트립 예약<br>
-          - 정확한 픽업 시간은 투어 1일 전 카톡 안내
+          - 마이리얼트립 예약 & 카톡(차영석, 마이힐링코타)<br>
+          - 정확한 픽업 시간은 투어 1일 전 오후 카톡 안내
+      </li>
+      <li><div class="item">09:00~13:30 🎣 낚시투어</div>
+      </li>
+      <li><div class="toggle-item">13:30~16:00 🏨 체크인, 🏊 수영장 이용, 씻고 준비</div>
+        <div class="detail">
+          [ 방 번호 ]<br>
+          Ex. 6543<br>
+          6: 건물이름<br>
+          5: 층수<br>
+          43: 호실<br><br>
+          [ 수영장 ]<br>
+          암튜브 & 비치 발리볼<br>
+          퍼시픽에는 미끄럼틀 있음<br><br>
+          [ 나갈 때 준비물 ]<br>
+          1) 돗자리: 일몰 때 사용<br>
+          2) 소주: 쌍천씨푸드에서 먹기
         </div>
       </li>
-      <li><div class="toggle-item">13:30~15:00 🏨 체크인, 🏊 수영장 이용</div>
-        <div class="detail">마젤란 리조트 체크인 후 수영</div>
+      <li><div class="item">16:00~16:30 마젤란 숙소 - 쇼핑몰 이동</div>
       </li>
-      <li><div class="toggle-item">16:00~17:00 💆 발 마사지</div>
-        <div class="detail">리조트 내 마사지</div>
+      <li><div class="item">16:30~17:30 🛍 쇼핑몰 구경</div>
       </li>
-      <li><div class="toggle-item">18:00~19:00 🌅 일몰</div>
-        <div class="detail">최소 20분 전 도착, 탄중아루 또는 리조트 근처</div>
+      <li><div class="item">17:30~17:50 🌅 탄중아루 일몰 포인트 이동</div>
       </li>
-      <li><div class="toggle-item">19:00~20:00 🍤 쌍천씨푸드</div>
-        <div class="detail">현지 씨푸드 레스토랑</div>
+      <li><div class="toggle-item">17:50~19:00 🌅 탄중아루 일몰 구경</div>
+        <div class="detail">
+          최소 20분 전 도착 필요<br>       
+          일몰 시간: 18시 22분
+        </div>
       </li>
-      <li><div class="toggle-item">20:00~21:00 🌃 필리피노 야시장</div>
-        <div class="detail">현지 야시장 구경, 간식 포함</div>
+      <li><div class="toggle-item">19:00~20:30 🍤 쌍천씨푸드(쌍둥이 하늘 해산물 레스토랑)</div>
+        <div class="detail">
+          [ 메뉴 ]<br>
+          - 오징어 튀김: Large(80링깃)<br>
+          - 버터 크림 새우: 500g(40링깃)<br>
+          - 머드 칠리 크랩: 2마리(40링깃)<br>
+          - 마늘 계란 볶음밥: Medium(30링깃)<br>
+          - 드라이 버터 새우: 500g(40링깃)<br>
+          - 모닝글로리: Small(18링깃)<br>
+          - 칠리 가리비:500g(20링깃)<br>
+          - 아이스버킷: 콜키지 무료(10링깃)<br><br>
+          ※ 약 300링깃 예상<br>
+          ※ 왓츠앱으로 예약 완료<br>
+          ※ 하말 할인 쿠폰 꼭 사용(코타 앨범 확인
+        </div>
+      </li>
+            <li><div class="toggle-item">20:30~21:30 필리피노 야시장</div>
+        <div class="detail">
+          [ 추천 메뉴 ]<br>
+          일반 망고: 10링깃(망고보이 30링깃)<br>
+          허니 망고: 20링깃<br>
+          애플 망고: 15링깃<br>
+          망고스틴: 20링깃<br>
+          닭날개 꼬치: 2.5링깃<br><br>
+          ※ 약 100링깃 예상<br>
+          ※ 영업시간: 17:00~23:00<br>
+          ※ 현금만 가능<br>
+        </div>
+      </li>
+      <li><div class="item">21:30~22:00 필리피노 야시장 - 마젤란 숙소 이동</div>
+      </li>
+        <li><div class="item">22:00~ 😴 숙소에서 휴식</div>
       </li>
     </ul>
   </div>
 
   <!-- DAY 3 -->
   <div class="day" id="day3">
-    <h3>DAY 3 – 자유 일정 & 쇼핑</h3>
+    <h3>DAY 3 – 01/23</h3>
     <ul>
-      <li><div class="toggle-item">08:00~08:30 🥐 조식 및 준비</div>
-        <div class="detail">조식 후 액티비티 준비</div>
+      <li><div class="toggle-item">07:20~08:20 🥐 조식 및 준비</div>
+        <div class="detail">
+          준비물<br>
+          1) 식빵: 물고기 미끼용<br>
+          2) 라면 챙기기: 액티비티 도중<br>
+          3) 돗자리<br>
+          4) 스노쿨링 장비<br>
+          5) 수건<br>
+        </div>
+      </li>
+      <li><div class="toggle-item">08:20~08:30 마젤란 숙소 - 제셀톤 포인트 이동</div>
+        <div class="detail">
+          섬투어 입장료(1인 25링깃, 총 100링깃)
+        </div>
       </li>
       <li><div class="toggle-item">08:30~13:00 🤿 액티비티</div>
-        <div class="detail">현지 액티비티 참여, 미끼용 빵 챙기기</div>
+        <div class="detail">
+          1) 현지 액티비티 참여<br>
+          2) 라면 먹기<br>
+          ※ 배고프면 졸리비 미리 예약해서 기사에게 픽업 요청
+        </div>
       </li>
       <li><div class="toggle-item">13:00~16:00 🍔 졸리비 배달 & 🏊 수영장 & 🚿 씻고 준비</div>
         <div class="detail">
-          - 미리 장바구니 담기<br>
-          - 리조트 이동 시 기사에게 픽업 요청
+          [ 메뉴 ]<br>
+          - 9pc Spicy Chicken<br>
+          - Classic Jollyl Sausage<br>
+          - Spaghetti<br>
+          - Pepsi Large<br>
+          - Sprite Large<br><br>
+          ※ 약 100링깃 예상<br>
+          ※ 리조트 이동 시 기사에게 픽업 요청
         </div>
       </li>
-      <li><div class="toggle-item">16:00~17:30 💆 마사지</div>
-        <div class="detail">리조트 내 마사지</div>
+      <li><div class="toggle-item">16:00~16:30 마젤란 숙소 - 벨라 선셋 마사지샵 이동</div>
+        <div class="detail">
+          예약 완료<br>
+          1인 40링깃, 총 160링깃
+        </div>
       </li>
-      <li><div class="toggle-item">17:30~19:00 🌅 탄중아루</div>
-        <div class="detail">석양 감상, 사진 촬영</div>
+      <li><div class="toggle-item">16:30~17:30 💆 마사지</div>
+        <div class="detail">
+          위치: 벨라 선셋 마사지<br>
+          ※ 졸리비 미리 픽업 예약<br>
+        </div>
       </li>
-      <li><div class="toggle-item">19:00~21:00 🛍 KK플라자 or 수리아사바 몰</div>
-        <div class="detail">쇼핑 및 기념품 구매</div>
+      <li><div class="item">17:30~17:50 🌅 탄중아루 일몰 포인트 이동</div>
+        <div class="detail">
+          졸리비 픽업(도보 5분)<br>
+          졸리비 - 탄중아루 이동
+        </div>
       </li>
-      <li><div class="toggle-item">21:00~ 🍜 한식 배달</div>
-        <div class="detail">제주식당 또는 우리 BBQ 배달</div>
+      <li><div class="toggle-item">17:50~19:00 🌅 탄중아루 일몰 구경</div>
+        <div class="detail">석양 감상, 사진 촬영, 졸리비</div>
+      </li>
+      <li><div class="item">19:00~20:30 🛍 쇼핑몰 구경</div>
+      </li>
+      <li><div class="toggle-item">21:00~ 🍜 한식 배달, 캐리어 정리, 휴식</div>
+        <div class="detail">
+          1) 우리 비비큐: ~21시, 로비 배달 가능<br>
+          2) 소반: ~21시, 애매<br>
+          ※ 약 100링깃 예상
+        </div>
       </li>
     </ul>
   </div>
 
   <!-- DAY 4 -->
   <div class="day" id="day4">
-    <h3>DAY 4 – 시티투어 & 반딧불이</h3>
+    <h3>DAY 4 – 01/24</h3>
     <ul>
-      <li><div class="toggle-item">08:00~09:00 🥐 조식</div>
+      <li><div class="toggle-item">08:00~09:30 🥐 조식</div>
         <div class="detail">조식 후 준비</div>
       </li>
-      <li><div class="toggle-item">09:30~10:00 🏨 마젤란 체크아웃</div>
-        <div class="detail">리조트 체크아웃 후 시티투어 준비</div>
+      <li><div class="toggle-item">09:30~10:00 🏨 마젤란 체크아웃 & 🧳 짐 보관</div>
+        <div class="detail">
+          리조트 체크아웃 후 시티투어 준비<br>
+          ※ 체크아웃 시 어매니티 챙기기(저녁 씻을 때)
+        </div>
       </li>
       <li><div class="toggle-item">10:00~12:00 🚌 시티투어</div>
-        <div class="detail">현지 관광지 투어</div>
+        <div class="detail">
+          1) 핑크모스크: 입장료(1인 10링깃, 총 40링깃)<br>
+          2) UMS 오션<br>
+          3) 블루모스크: 입장료(1인 5링깃, 총 20링깃)<br><br>
+
+          ※ 투어 예약 완료: Rahman(카톡)<br>
+          ※ 출발지: 마젤란<br>
+          ※ 도착지: 수리아사바 몰(변경 가능!)<br>
+          ※ 투어 비용(입장료 포함): 총 240링깃 
+        </div>
       </li>
-      <li><div class="toggle-item">12:00~13:00 🛍 수리아사바 몰</div>
-        <div class="detail">쇼핑 및 점심 가능</div>
+      <li><div class="item">12:00~13:00 🛍 쇼핑몰 구경</div>
       </li>
-      <li><div class="toggle-item">13:00~13:50 🍜 유잇청</div>
+      <li><div class="toggle-item">13:00~14:00 🍜 유잇청</div>
         <div class="detail">
           1) 토스트: 07~15시<br>
           2) 국수 및 식사: 08~14시<br>
@@ -313,36 +455,253 @@
           ※ KK플라자랑 수리아사바 몰 사이
         </div>
       </li>
-      <li><div class="toggle-item">14:15~21:00 ✨ 반딧불이 투어</div>
-        <div class="detail">마젤란 업체 픽업, 자연 속에서 반딧불이 관람</div>
+      <li><div class="item">14:00~14:15 유잇청 - 마젤란 숙소 이동</div>
       </li>
-      <li><div class="toggle-item">21:00~22:00 🍽 저녁???</div>
-        <div class="detail">현지 식사 옵션</div>
+      <li><div class="item">14:15~21:00 ✨ 반딧불이 투어</div>
       </li>
-      <li><div class="toggle-item">22:00~22:20 🚕 공항 이동</div>
-        <div class="detail">공항으로 이동</div>
+      <li><div class="toggle-item">21:00~22:00 씻고 출국 준비</div>
+        <div class="detail">
+          위치: SUTERA HARBOUR MARINA&COUNTRY CLUB 헬스장 내부 샤워실
+        </div>
+      </li>
+      <li><div class="item">22:00~22:30 마젤란 숙소 - 공항 이동</div>
+      </li>
+      <li><div class="item">22:00~22:20 🚕 공항 이동</div>
+      </li>
+      </li>
+      <li><div class="item">22:20~24:40 짐 부치기, 출국 심사, 비행기 탑승</div>
       </li>
     </ul>
   </div>
 
   <!-- DAY 5 -->
   <div class="day" id="day5">
-    <h3>DAY 5 – 귀국</h3>
+    <h3>DAY 5 – 01/25</h3>
     <ul>
-      <li><div class="toggle-item">00:40~06:30 ✈️ 코타키나발루 → 김해공항</div>
-        <div class="detail">비행기 탑승 및 이동</div>
+      <li><div class="item">00:40~06:30 ✈️ 코타키나발루 → 김해공항</div>
       </li>
-      <li><div class="toggle-item">06:30~07:00 🛂 출국 심사</div>
-        <div class="detail">공항 도착 후 출국 심사</div>
+      <li><div class="item">06:30~07:00 🛂 입국 심사</div>
       </li>
-      <li><div class="toggle-item">07:00~07:30 💳 캐리어 찾기</div>
-        <div class="detail">짐 찾고 준비</div>
+      <li><div class="item">07:00~07:30 💳 캐리어 찾기</div>
       </li>
-      <li><div class="toggle-item">07:30~08:30 🏠 김해공항 → 집</div>
-        <div class="detail">집으로 안전하게 귀가</div>
+      <li><div class="item">07:30~08:30 🏠 김해공항 → 집</div>
       </li>
     </ul>
   </div>
+
+  <!-- Detail -->
+  <div class="day" id="DETAIL">
+    <h3>🛍 코타키나발루 쇼핑몰 비교</h3>
+
+    <div style="overflow-x:auto;">
+      <table style="
+        width:100%;
+        border-collapse:collapse;
+        font-size:0.95rem;
+        text-align:center;
+        background:#ffffff;
+      ">
+        <thead style="background:#4db6ac;color:white;">
+          <tr>
+            <th style="padding:8px;border:1px solid #ddd;">구분</th>
+            <th style="padding:8px;border:1px solid #ddd;">KK 플라자</th>
+            <th style="padding:8px;border:1px solid #ddd;">수리아사바 몰</th>
+            <th style="padding:8px;border:1px solid #ddd;">이마고 몰</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="padding:8px;border:1px solid #ddd;">영업시간</td>
+            <td style="padding:8px;border:1px solid #ddd;">09:00~21:00</td>
+            <td style="padding:8px;border:1px solid #ddd;">10:00~22:00</td>
+            <td style="padding:8px;border:1px solid #ddd;">10:00~22:00</td>
+          </tr>
+          <tr>
+            <td style="padding:8px;border:1px solid #ddd;">유잇청</td>
+            <td style="padding:8px;border:1px solid #ddd;">도보 8분</td>
+            <td style="padding:8px;border:1px solid #ddd;">도보 7분</td>
+            <td style="padding:8px;border:1px solid #ddd;">차량 8분</td>
+          </tr>
+          <tr>
+            <td style="padding:8px;border:1px solid #ddd;">필리피노 마켓</td>
+            <td style="padding:8px;border:1px solid #ddd;">도보 4분</td>
+            <td style="padding:8px;border:1px solid #ddd;">차량 8분</td>
+            <td style="padding:8px;border:1px solid #ddd;">차량 6분</td>
+          </tr>
+          <tr>
+            <td style="padding:8px;border:1px solid #ddd;">가격대</td>
+            <td style="padding:8px;border:1px solid #ddd;">제일 저렴</td>
+            <td style="padding:8px;border:1px solid #ddd;">약간 저렴</td>
+            <td style="padding:8px;border:1px solid #ddd;">비쌈</td>
+          </tr>
+          <tr>
+            <td style="padding:8px;border:1px solid #ddd;">마트</td>
+            <td style="padding:8px;border:1px solid #ddd;">지하 1층</td>
+            <td style="padding:8px;border:1px solid #ddd;">3층 BATARAS</td>
+            <td style="padding:8px;border:1px solid #ddd;">지하 Everrise</td>
+          </tr>
+          <tr>
+            <td style="padding:8px;border:1px solid #ddd;">야오야오</td>
+            <td style="padding:8px;border:1px solid #ddd;">없음</td>
+            <td style="padding:8px;border:1px solid #ddd;">지하 1층</td>
+            <td style="padding:8px;border:1px solid #ddd;">지하 1층</td>
+          </tr>
+          <tr>
+            <td style="padding:8px;border:1px solid #ddd;">기타 포인트</td>
+            <td style="padding:8px;border:1px solid #ddd;">근처 유잇청</td>
+            <td style="padding:8px;border:1px solid #ddd;">유레카 팝콘 판매<br>나이키·언더아머(Sports Direct USC)</td>
+            <td style="padding:8px;border:1px solid #ddd;">민속공연 12/14/16/18/20시</td>
+          </tr>
+        </tbody>
+      </table>
+      <div style="margin-top:25px;">
+        <h3 style="margin-bottom:10px;color:#ffffff;">🎁 기념품 추천 참고 링크</h3>
+
+        <a href="https://blog.naver.com/buzzerrbeate/224135146113" 
+          target="_blank" 
+          style="text-decoration:none;color:inherit;">
+
+          <div style="
+            display:flex;
+            align-items:center;
+            gap:15px;
+            border:1px solid #ddd;
+            border-radius:12px;
+            padding:12px;
+            box-shadow:0 2px 6px rgba(0,0,0,0.1);
+            background:#ffffff;
+            transition:transform 0.2s;
+          ">
+
+            <!-- 이미지 -->
+                <img src="souvenir1.jpg"
+                alt="코타키나발루 기념품"
+                style="width:90px;height:90px;object-fit:cover;border-radius:10px;"
+                onerror="this.style.display='none';">
+
+                <!-- 텍스트 -->
+            <div style="text-align:left;">
+              <div style="font-weight:bold;font-size:1rem;margin-bottom:6px;">
+                코타키나발루 기념품 추천 정리
+              </div>
+              <div style="font-size:0.9rem;color:#555;">
+                과자 / 로컬템 / 선물용 리스트 보기
+              </div>
+            </div>
+          </div>
+        </a>
+        <!-- Activity Guide -->
+<div style="margin-top:30px;">
+
+  <h3 style="color:#ffffff;">🎯 액티비티 안내</h3>
+<!-- ================= ACTIVITY TABS ================= -->
+<div style="margin-top:25px;">
+
+  <!-- 탭 버튼 -->
+  <div style="display:flex;border-bottom:2px solid #4db6ac;margin-bottom:15px;">
+    <button class="act-tab active" data-act="act23"
+      style="flex:1;padding:8px;border:none;background:#b2dfdb;font-weight:bold;">
+      🏝 01/23 섬투어
+    </button>
+    <button class="act-tab" data-act="act24"
+      style="flex:1;padding:8px;border:none;background:#b2dfdb;font-weight:bold;">
+      🪲 01/24 반딧불
+    </button>
+  </div>
+
+            <!-- ================= 01/23 ================= -->
+            <div id="act23" class="act-section active"
+                style="padding:15px;border:1px solid #ddd;border-radius:12px;background:#f9ffff;">
+
+              <h4>🏝 1/23 섬투어 안내</h4>
+
+              <b>📌 당일 진행 개요</b>
+              <ul>
+                <li>조엘(Joel)과 미팅 후 티켓 수령</li>
+                <li>섬투어 티켓: 결제 후 실물 수령</li>
+                <li>기타 티켓: 옘미 카톡 사진 발송 예정</li>
+                <li>네이버 디파짓: 당일 24시간 내 환불</li>
+              </ul>
+
+              <p>
+                📆 투어일자: 1/23<br>
+                ⏰ 미팅시간: 8:30 AM<br>
+                ⚓ 미팅장소: 제셀톤포인트 외부 Waiting Area 표지판 앞<br>
+                👨🏾‍✈️ 미팅직원 겸 인솔가이드 : Joel (조엘)<br>
+                💵 결제금액: RM0 (RM990 지불완료)
+              </p>
+
+              <b>👙 섬투어 준비물</b>
+              <ul>
+                <li>해외결제 가능 카드(Master/Visa등)</li>
+                <li>긴팔/긴바지 래쉬가드 or 수영복</li>
+                <li>선크림, 선글라스, 휴지, 수건, 여벌 옷</li>
+                <li>간단한 샤워용품(오픈형), 간식 or 컵라면</li>
+                <li>❌ 여권 불필요</li>
+              </ul>
+
+              <b>📆 섬투어 일정</b>
+              <ul>
+                <li>08:30 제셀톤 미팅 → 실물 티켓 수령</li>
+                <li>09:00 대여품 수령,보트 탑승 → 마무틱섬</li>
+                <li>09:30~11:50 패러세일링3인+씨워킹3인</li>
+                <li>12:00 사피 섬이동(가이드 미동행)</li>
+                <li>
+                  ⏰ 아웃 선택: 13:00/14:00/15:00/16:00 중 택1<br>
+                  (아웃시간은 마지막섬 코디네이터에게 공유,<br>
+                  아웃시간 5분 전까지 코디네이터 미팅 필수)<br><br>
+                  ※ 추후 변경 필요 시 기존 아웃시간 1시간 전까지 조엘에게<br>
+                  티켓사진 + 카톡 OR 보이스톡
+                </li>
+                <li>점심식사: 섬 내 식당 이용 or 도시락 사전 신청 가능</li>
+                <li>일정은 당일 보트/액티비티 상황에 따라 유동적</li>
+                <li>※ 엄마 동행: 당일 코디네이터에게 탑승 전 말하기</li>
+              </ul>
+            </div>
+
+            <!-- ================= 01/24 ================= -->
+            <div id="act24" class="act-section"
+                style="padding:15px;border:1px solid #ddd;border-radius:12px;background:#f9ffff;">
+
+              <h4>🪲 1/24 반딧불투어 안내</h4>
+
+              <b>📌 픽업정보 (예상)</b>
+              <ul>
+                <li>🚗 차량번호: SAC2162C</li>
+                <li>⏰ 스탠바이: 2:15PM 마젤란수트라 로비</li>
+                <li>✅ 봉가완 입장료 포함 (추가 결제 없음)</li>
+                <li>❗ 정확한 차량/픽업시간은 당일 차량 배차 후 재안내</li>
+                <li>픽업시간은 1:50~2:40 사이 변동 가능</li>
+              </ul>
+
+              <b>🦟 반딧불투어 준비물</b>
+              <ul>
+                <li>걸칠 수 있는 긴팔/긴바지, 모기스프레이</li>
+                <li>컵라면 지참 시, 뜨거운 물 RM2(현금)</li>
+                <li>❌ 여권 지참 불필요 (차량 탑승 시 기재만 필요)</li>
+              </ul>
+
+              <b>📆 일정</b>
+              <ul>
+                <li>14:00~15:00 픽업</li>
+                <li>16:30 봉가완 도착 + 웰컴스낵</li>
+                <li>16:30~17:00 원숭이투어</li>
+                <li>17:00~18:00 저녁식사 (현지식 뷔페)</li>
+                <li>18:00~19:00 선셋 포인트 + 반딧불투어</li>
+                <li>20:30~21:00 시내 or 공항 드랍</li>
+                <li>픽업/교통/날씨/선셋 상황에 따라 일정 상이</li>
+                <li>비가 와도 진행됩니다!</li>
+                <li>※ 봉가완은 코타키나발루와 날씨 다름</li>
+              </ul>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>  
+  </div>
+
 
 </section>
 
@@ -372,6 +731,16 @@
       detail.classList.toggle('open');
     });
   });
+
+  //DETAIL Tab
+  document.querySelectorAll('.act-tab').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    document.querySelectorAll('.act-tab').forEach(b=>b.classList.remove('active'));
+    document.querySelectorAll('.act-section').forEach(s=>s.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(btn.dataset.act).classList.add('active');
+  });
+});
 </script>
 
 </body>
